@@ -22,17 +22,19 @@ yum install wget git java-1.8.0-openjdk -y
 
 	#Directory creation
 
-mkdir /home/centos/buildtools/
-mkdir /home/centos/spigot/
-ln -s /home/centos/spigot/ Desktop/ServerFolder
-cd /home/centos/buildtools/
+mkdir /home/buildtools/
+mkdir /home/spigot/
+chmod -R a+rw /home/spigot
+cd ~/Desktop
+ln -s /home/spigot/ Desktop/ServerFolder
+cd /home/buildtools/
 
 	#Download/install of BuildTools -- note: make sure the environment has >1.2 GB of RAM
 
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 java -jar BuildTools.jar --rev 1.12.2
-mv spigot-1.12.2.jar /home/centos/spigot/spigot-1.12.2.jar
-cd /home/centos/spigot/
+mv spigot-1.12.2.jar /home/spigot/spigot-1.12.2.jar
+cd /home/spigot/
 echo "eula=true" >> eula.txt
 
 	#opening the minecraft server port
