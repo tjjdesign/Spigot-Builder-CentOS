@@ -24,6 +24,7 @@ yum install wget git java-1.8.0-openjdk -y
 
 mkdir /home/centos/buildtools/
 mkdir /home/centos/spigot/
+ln -s /home/centos/spigot/ Desktop/ServerFolder
 cd /home/centos/buildtools/
 
 	#Download/install of BuildTools -- note: make sure the environment has >1.2 GB of RAM
